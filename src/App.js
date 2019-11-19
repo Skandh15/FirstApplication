@@ -20,7 +20,7 @@ class App extends Component {
         <h1>React Application</h1>
         <h2>Use of State with event handling</h2>
         <p><strong>The difference between state and props is that state works in the same js while in props we have to pass props to another component.</strong></p>
-        <button onClick = {this.CharacterSwitchHandler}>Switch Character</button>
+        <button onClick = {this.CharacterSwitchHandler.bind(this,'It\'s not that common, it\'s not that easy and it doesn\'t happen to every guy.')}>Switch Character</button>
         <h5>Hi, I am { this.state.character[0].name }. <br></br>  { this.state.character[0].tagline } </h5>
         <h5>Hi, I am { this.state.character[1].name }. <br></br>  { this.state.character[1].tagline } </h5>
         <h5>Hi, I am { this.state.character[2].name }. <br></br>  { this.state.character[2].tagline } </h5>
@@ -34,7 +34,7 @@ class App extends Component {
     );
   }
 
-  CharacterSwitchHandler = () =>{
+  CharacterSwitchHandler = (newTagline) =>{
     this.setState({
       character:[
         {name : 'Ross Geller', tagline : "We were on a break."},
@@ -42,7 +42,7 @@ class App extends Component {
         {name : 'Joey Tribbiani',tagline : "Joey doesn't share food."},
         {name: 'Chandler Bing',tagline : "Can i interest you in sarcastic comment."},
         {name: 'Phoebe Buffay', tagline : "My mother killed herself."},
-        {name : 'Rachel Green', tagline : "We were not on a break."} 
+        {name : 'Rachel Green', tagline : newTagline} 
       ]}
     )
   }
