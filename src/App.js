@@ -13,14 +13,15 @@ class App extends Component {
       {name : 'Rachel Green', tagline : "We were not on a break."}
     ]
   }
-
+  
+  newTagline = 'It\'s not that common, it\'s not that easy and it doesn\'t happen to every guy.';
   render() {
     return (
       <div className="App">
         <h1>React Application</h1>
         <h2>Use of State with event handling</h2>
         <p><strong>The difference between state and props is that state works in the same js while in props we have to pass props to another component.</strong></p>
-        <button onClick = {this.CharacterSwitchHandler.bind(this,'It\'s not that common, it\'s not that easy and it doesn\'t happen to every guy.')}>Switch Character</button>
+        <button onClick = {this.CharacterSwitchHandler.bind(this,this.newTagline)}>Switch Character</button>
         <h5>Hi, I am { this.state.character[0].name }. <br></br>  { this.state.character[0].tagline } </h5>
         <h5>Hi, I am { this.state.character[1].name }. <br></br>  { this.state.character[1].tagline } </h5>
         <input type = 'text' onChange = {this.NameChangehandler}></input>
